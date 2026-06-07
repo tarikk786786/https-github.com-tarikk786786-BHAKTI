@@ -46,7 +46,7 @@ export default function Pricing() {
           >
             <span className="absolute inset-0 bg-white/20 w-1/2 -skew-x-12 -translate-x-full animate-[shine_3s_infinite]"></span>
             <span className="relative z-10 flex items-center justify-center gap-2">
-              GET INSTANT DIVINE ACCESS <ShieldCheck className="w-6 h-6" />
+              START MY SPIRITUAL JOURNEY <ShieldCheck className="w-6 h-6" />
             </span>
           </motion.a>
 

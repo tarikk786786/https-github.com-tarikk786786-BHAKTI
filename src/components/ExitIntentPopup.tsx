@@ -62,7 +62,7 @@ export default function ExitIntentPopup() {
             className="w-full bg-gradient-to-r from-yellow-500 to-yellow-600 text-black font-bold py-4 rounded-xl shadow-[0_0_20px_rgba(234,179,8,0.3)] hover:shadow-[0_0_30px_rgba(234,179,8,0.5)] transition-all flex items-center justify-center gap-2"
           >
             <Sparkles className="w-5 h-5" />
-            Receive Divine Access for ₹299
+            Start My Spiritual Journey for ₹299
           </motion.button>
         </motion.div>
       </motion.div>

@@ -1,197 +1,208 @@
-import { motion } from 'motion/react';
-import { Heart, ShieldCheck, Sunrise, CircleDot, Flower2, Wind, Feather, PhoneCall, Lock } from 'lucide-react';
+import { motion, useScroll, useTransform } from 'motion/react';
+import { Heart, ShieldCheck, Moon, PhoneCall, BrainCircuit, ArrowRight, Sunrise, Compass, Sparkles, Wind } from 'lucide-react';
+import { useRef } from 'react';
 
 export default function Story() {
-  const practiceBenefits = [
-    "Feel emotionally calmer",
-    "Stay spiritually focused",
-    "Develop daily discipline",
-    "Reduce negativity",
-    "Improve inner positivity",
-    "Build peaceful habits",
-    "Reconnect with gratitude and faith",
-    "Create a stronger spiritual mindset"
-  ];
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
 
-  const quotes = [
-    "Sometimes the greatest blessing is inner peace.",
-    "Faith does not remove every problem instantly — but it gives strength to face them.",
-    "A peaceful mind creates a stronger life.",
-    "Devotion becomes powerful when practiced with sincerity and consistency.",
-    "Even a few minutes of calm spiritual practice can change the energy of your entire day."
-  ];
+  const opacity1 = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
+  const y1 = useTransform(scrollYProgress, [0, 0.2], [50, 0]);
 
+  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  
   return (
-    <section id="story" className="py-24 px-4 bg-[#1A0307] relative overflow-hidden">
+    <section ref={containerRef} id="story" className="py-32 px-4 bg-[#0A0102] relative overflow-hidden">
       {/* Cinematic Backgrounds */}
-      <div className="absolute inset-0 bg-[#0d0103]"></div>
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1590082875151-57b1bc5570bb?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-[0.03] mix-blend-screen pointer-events-none"></div>
-      <div className="absolute top-0 right-0 w-full max-w-4xl h-[800px] bg-[radial-gradient(ellipse_at_top_right,rgba(255,215,0,0.06)_0,transparent_60%)] pointer-events-none blur-[60px]"></div>
+      <motion.div style={{ y: bgY }} className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1590082875151-57b1bc5570bb?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-[0.03] mix-blend-screen pointer-events-none"></motion.div>
+      
+      {/* Soft Golden Light */}
+      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[radial-gradient(ellipse_at_center,rgba(255,215,0,0.03)_0,transparent_60%)] pointer-events-none blur-[80px]"></div>
 
-      {/* Floating Diya Lamps */}
+      {/* Floating Petals / Particles Fake Animation */}
       <motion.div 
-        animate={{ y: [0, -10, 0], opacity: [0.6, 0.9, 0.6] }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-40 right-[10%] hidden lg:block"
+        animate={{ y: [0, -20, 0], opacity: [0.3, 0.6, 0.3] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-1/4 right-[15%] hidden lg:block"
       >
-        <span className="text-3xl filter drop-shadow-[0_0_15px_rgba(255,215,0,0.8)]">🪔</span>
+        <span className="text-xl filter drop-shadow-[0_0_10px_rgba(255,215,0,0.5)]">🌸</span>
       </motion.div>
       <motion.div 
-        animate={{ y: [0, 15, 0], opacity: [0.6, 0.9, 0.6] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        className="absolute bottom-40 left-[10%] hidden lg:block"
+        animate={{ y: [0, 15, 0], opacity: [0.3, 0.6, 0.3] }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+        className="absolute bottom-1/4 left-[10%] hidden lg:block text-yellow-500/20"
       >
-        <span className="text-3xl filter drop-shadow-[0_0_15px_rgba(255,215,0,0.8)]">🪔</span>
+        <Wind className="w-8 h-8" />
       </motion.div>
       
-      <div className="max-w-6xl mx-auto relative z-10 flex flex-col items-center">
+      <div className="max-w-4xl mx-auto relative z-10">
         
-        {/* Sanskrit Mantra Overlay Background Effect */}
-        <div className="absolute inset-0 flex justify-center items-center pointer-events-none select-none overflow-hidden opacity-[0.02]">
-           <p className="text-[12rem] md:text-[18rem] leading-none font-serif text-yellow-500 whitespace-nowrap -rotate-6 translate-y-10">ॐ शान्तिः</p>
-        </div>
-
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16 relative z-10 max-w-4xl"
-        >
-          <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-b from-yellow-500/10 to-transparent border border-yellow-500/20 mb-8 shadow-[0_0_30px_rgba(255,215,0,0.05)]">
-            <Feather className="w-10 h-10 text-yellow-500/80 drop-shadow-md" />
-          </div>
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.2] mb-8 drop-shadow-md tracking-wide">
-            There are moments in life <br className="hidden md:block"/>
-            <span className="text-gold-gradient">when everything feels heavy.</span>
-          </h2>
-        </motion.div>
-          
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 max-w-6xl w-full mb-24">
-          {/* Main Content Area */}
-          <motion.div 
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="lg:col-span-6 space-y-8"
-          >
-            <p className="text-xl md:text-3xl text-gray-200 font-serif leading-relaxed italic drop-shadow-md">
-              "Many people silently carry financial stress every day. Sometimes people only need hope, positivity, and inner peace to move forward again."
-            </p>
-            
-            <div className="space-y-6 text-gray-400 text-lg leading-relaxed mt-8">
-              <p>
-                Financial pressure, emotional exhaustion, lack of focus, and daily struggles begin affecting inner peace. In these difficult moments, many people search not for magic… but for strength, clarity, hope, and peace.
-              </p>
-              <p>
-                For generations in Indian spiritual tradition, devotees have turned toward Lord Ganesh during challenging phases of life. Lord Ganesh is worshipped as the symbol of wisdom, positivity, guidance, focus, and removal of obstacles.
-              </p>
-              <p className="border-l-2 border-yellow-600/50 pl-5 text-gray-300">
-                Faith and discipline can help create a calmer and stronger mindset. You are not alone in difficult times.
-              </p>
-              <p className="border border-yellow-900/30 p-6 mt-8 text-yellow-500/90 font-medium bg-black/40 rounded-2xl shadow-inner italic">
-                This guide was created to offer a peaceful devotional routine rooted in positivity and faith. It is about changing your mindset, energy, discipline, and emotional connection through sincere devotional routine.
-              </p>
+        {/* Scene 1: The Heavy Night */}
+        <motion.div style={{ opacity: opacity1, y: y1 }} className="mb-32">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-red-900/10 border border-red-900/30 mb-6">
+              <Moon className="w-8 h-8 text-gray-500" />
             </div>
-          </motion.div>
+            <h2 className="font-serif text-3xl md:text-5xl font-bold text-white leading-tight mb-8 drop-shadow-md">
+              “Every night felt <span className="text-red-500/80">heavier</span> than the last…”
+            </h2>
+          </div>
+          
+          <div className="bg-black/60 backdrop-blur-xl border border-red-900/20 rounded-[2rem] p-8 md:p-12 shadow-2xl">
+            <p className="text-xl md:text-2xl text-gray-300 font-serif leading-relaxed italic mb-8 border-l-2 border-red-900/50 pl-6">
+              He smiled in front of people, but silently carried fear, stress, and emotional pressure inside. Loans, responsibilities, delayed money, and constant tension slowly started taking away his peace.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-400 font-sans">
+              <div className="flex items-start gap-4">
+                <BrainCircuit className="w-6 h-6 text-red-900/80 shrink-0 mt-1" />
+                <p>Sitting awake at night worrying, constantly checking phone notifications, carrying the deep fear of loan calls and family pressure.</p>
+              </div>
+              <div className="flex items-start gap-4">
+                <Heart className="w-6 h-6 text-red-900/80 shrink-0 mt-1" />
+                <p>Financial burden doesn’t only affect money… it slowly affects the heart, mind, confidence, and peace of a person. It is emotionally exhausting to pretend everything is okay.</p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
 
-          {/* Core Practice Benefits Area */}
-          <motion.div 
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="lg:col-span-6 space-y-8"
-          >
-            <div className="bg-gradient-to-b from-[#2A050B]/60 to-black/80 backdrop-blur-xl border border-yellow-900/40 p-8 md:p-10 rounded-[2rem] shadow-[0_0_40px_rgba(255,215,0,0.03)] relative overflow-hidden group hover:border-yellow-500/20 transition-colors h-full">
-              <div className="absolute top-0 right-0 w-40 h-40 bg-yellow-500/5 rounded-full blur-3xl group-hover:bg-yellow-500/10 transition-colors"></div>
-              
-              <div className="flex items-center gap-4 mb-8 relative z-10">
-                <div className="bg-yellow-500/10 p-3 rounded-2xl border border-yellow-500/20 shadow-inner">
-                  <Sunrise className="w-7 h-7 text-yellow-500" />
+        {/* Scene 2: The Spiritual Turning Point */}
+        <motion.div 
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          className="mb-32 relative"
+        >
+          {/* Transition Line */}
+          <div className="absolute -top-16 left-1/2 -translate-x-1/2 w-px h-16 bg-gradient-to-b from-transparent via-yellow-900/50 to-yellow-500/50"></div>
+          
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-yellow-500/10 border border-yellow-500/30 mb-6 shadow-[0_0_20px_rgba(255,215,0,0.1)]">
+              <Compass className="w-8 h-8 text-yellow-500" />
+            </div>
+            <h2 className="font-serif text-3xl md:text-5xl font-bold text-white leading-tight mb-8">
+              A Spiritual <span className="text-gold-gradient">Turning Point</span>
+            </h2>
+          </div>
+
+          <div className="bg-gradient-to-br from-[#1c080d] to-black border border-yellow-900/40 rounded-[2rem] p-8 md:p-12 shadow-[0_0_40px_rgba(255,215,0,0.03)] text-center relative overflow-hidden">
+             <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-500/5 blur-3xl rounded-full"></div>
+             
+             <p className="text-lg md:text-xl text-gray-300 leading-relaxed font-sans mb-8 relative z-10">
+               During one incredibly difficult phase, he visited a deep, quiet temple. There, he met an old spiritual guide from Banaras who introduced him to an ancient Ganesh devotional practice—a simple daily spiritual discipline.
+             </p>
+
+             <blockquote className="text-2xl md:text-3xl font-serif text-yellow-500/90 italic font-medium max-w-2xl mx-auto mb-8 relative z-10">
+               “The old spiritual guide said: 'When negativity leaves the mind, new paths begin to appear in life.'”
+             </blockquote>
+
+             <p className="text-gray-400 text-lg leading-relaxed relative z-10 max-w-2xl mx-auto">
+               He was told that Lord Ganesh is worshipped as the <strong className="text-white">remover of obstacles</strong>, the guide of <strong className="text-white">new beginnings</strong>, and the energy of <strong className="text-white">positive direction</strong>.
+             </p>
+          </div>
+        </motion.div>
+
+        {/* Scene 3: How It Works */}
+        <motion.div 
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          className="mb-32"
+        >
+          <div className="text-center mb-12">
+            <h3 className="font-serif text-2xl md:text-4xl text-white font-bold mb-6">Not Magic. <span className="text-gold-gradient">Spiritual Discipline.</span></h3>
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto">The guide is a structured devotional routine focused on positivity, faith, and peaceful energy, designed to help create calmness and mental clarity during difficult times.</p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 relative z-10">
+             {[
+               "Ancient Ganesh mantra chanting",
+               "Daily devotional discipline",
+               "Positive mindset practices",
+               "Spiritual focus techniques",
+               "Peaceful prayer routine"
+             ].map((item, idx) => (
+               <div key={idx} className="flex items-center gap-4 bg-black/50 border border-yellow-900/30 p-5 rounded-2xl hover:border-yellow-500/40 transition-colors">
+                  <Sparkles className="w-5 h-5 text-yellow-500 shrink-0" />
+                  <span className="text-gray-200 font-medium text-lg">{item}</span>
+               </div>
+             ))}
+          </div>
+          
+          <p className="text-center text-gray-400 italic mt-8 text-lg">
+            Many devotees believe: peaceful thoughts create better focus, discipline creates stronger decisions, positivity creates emotional strength, and calmness helps people move forward again.
+          </p>
+        </motion.div>
+
+        {/* Scene 4: The Transformation & New Opportunities */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          className="mb-32"
+        >
+          <div className="bg-gradient-to-b from-[#2A050B] to-black border-2 border-yellow-500/20 rounded-[3rem] p-10 md:p-14 shadow-[0_0_60px_rgba(255,215,0,0.05)] relative overflow-hidden">
+             
+             <div className="text-center mb-12 relative z-10">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-yellow-500/10 border border-yellow-500/30 mb-6">
+                  <Sunrise className="w-8 h-8 text-yellow-500" />
+                </div>
+                <h3 className="font-serif text-3xl md:text-4xl text-white font-bold mb-6 drop-shadow-md">
+                  The <span className="text-gold-gradient">Emotional Transformation</span>
+                </h3>
+             </div>
+
+             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 relative z-10">
+                <div className="space-y-6">
+                  <p className="text-xl font-serif text-white italic border-l-2 border-yellow-600/50 pl-4">“He slowly stopped feeling emotionally trapped. The fear inside him slowly became calmer.”</p>
+                  <p className="text-gray-300 leading-relaxed">He started waking up with more positivity, strength, and hope. New confidence helped him face life again.</p>
                 </div>
                 <div>
-                  <h3 className="text-white font-bold text-3xl font-serif">The Power of Peace</h3>
+                  <h4 className="text-white font-bold text-lg mb-4 flex items-center gap-2"><ArrowRight className="w-5 h-5 text-yellow-500"/> Opening New Paths</h4>
+                  <p className="text-gray-400 leading-relaxed mb-4">
+                    Many devotees believe that when the mind becomes peaceful and negativity becomes lighter, new paths, job possibilities, business direction, and financial clarity begin opening naturally.
+                  </p>
                 </div>
-              </div>
-              
-              <p className="text-gray-400 text-base leading-relaxed mb-8 relative z-10">
-                This devotional experience combines spiritual guidance, mantra practice, calming rituals, and affirmations designed to help create a more peaceful lifestyle.
-              </p>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 relative z-10">
-                {practiceBenefits.map((benefit, i) => (
-                  <motion.div 
-                    key={i}
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.1 + (i * 0.05) }}
-                    className="flex items-start gap-3 bg-black/40 p-3 rounded-xl border border-white/5"
-                  >
-                    <Flower2 className="w-5 h-5 text-yellow-600 shrink-0 opacity-80" />
-                    <span className="text-gray-300 text-sm font-medium">{benefit}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Emotion Quotes Grid */}
-        <div className="w-full mb-24">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {quotes.map((quote, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className={`bg-black/50 backdrop-blur-sm border border-yellow-900/30 p-8 rounded-3xl relative overflow-hidden group hover:border-yellow-500/40 transition-all shadow-[0_0_20px_rgba(0,0,0,0.5)] ${i === 3 ? "md:col-span-2 lg:col-span-2" : ""} ${i === 4 ? "md:col-span-2 lg:col-span-1" : ""}`}
-              >
-                <Wind className="w-8 h-8 text-yellow-600/30 absolute top-6 right-6 group-hover:text-yellow-500/50 transition-colors" />
-                <p className="font-serif text-xl md:text-2xl text-gray-200 leading-relaxed italic tracking-wide">
-                  "{quote}"
-                </p>
-              </motion.div>
-            ))}
+             </div>
           </div>
-        </div>
+        </motion.div>
 
-        {/* Highlighted Trust Quote */}
+        {/* Final Emotional Message */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="w-full"
+          className="text-center"
         >
-          <div className="bg-gradient-to-b from-[#1c080b] to-[#0A0002] border-2 border-yellow-600/40 p-10 md:p-14 lg:rounded-[3rem] rounded-3xl relative shadow-[0_0_60px_rgba(255,215,0,0.08)] backdrop-blur-xl text-center overflow-hidden max-w-4xl mx-auto group">
-            {/* Animated Glow */}
-            <div className="absolute inset-[-50%] bg-[radial-gradient(circle_at_center,rgba(255,215,0,0.05)_0,transparent_60%)] animate-[spin_10s_linear_infinite] opacity-50"></div>
-            
-            <div className="inline-flex w-24 h-24 bg-gradient-to-t from-yellow-500/20 to-transparent rounded-full items-center justify-center mb-8 border border-yellow-500/40 shadow-[0_0_30px_rgba(255,215,0,0.15)] relative z-10 group-hover:scale-105 transition-transform duration-700">
-                <ShieldCheck className="w-12 h-12 text-yellow-500 drop-shadow-[0_0_10px_rgba(255,215,0,0.5)]" />
-            </div>
-            
-            <p className="font-serif text-2xl md:text-3xl text-white leading-relaxed font-medium relative z-10 max-w-2xl mx-auto drop-shadow-lg mb-10">
-              “We believe spirituality should inspire peace, discipline, positivity, and emotional strength — <span className="text-gold-gradient">not fake promises or unrealistic claims</span>.”
-            </p>
-            
-            {/* Trust Badges bottom */}
-            <div className="flex flex-wrap justify-center gap-4 relative z-10 border-t border-white/10 pt-8 mt-4">
-              <div className="flex items-center gap-2 bg-black/60 border border-white/5 px-4 py-2 rounded-full">
-                <Lock className="w-4 h-4 text-gray-400" />
-                <span className="text-xs text-gray-300 font-medium uppercase tracking-widest">100% Secure Payment</span>
-              </div>
-              <div className="flex items-center gap-2 bg-black/60 border border-white/5 px-4 py-2 rounded-full">
-                <PhoneCall className="w-4 h-4 text-gray-400" />
-                <span className="text-xs text-gray-300 font-medium uppercase tracking-widest">Human WhatsApp Support</span>
-              </div>
-              <div className="flex items-center gap-2 bg-black/60 border border-white/5 px-4 py-2 rounded-full">
-                <Heart className="w-4 h-4 text-gray-400" />
-                <span className="text-xs text-gray-300 font-medium uppercase tracking-widest">Respectful Guidance</span>
-              </div>
-            </div>
-          </div>
+           <h3 className="font-serif text-3xl md:text-5xl text-white font-bold mb-8 leading-tight">
+             “Sometimes the biggest miracle is not instant money…”
+           </h3>
+           
+           <div className="max-w-2xl mx-auto space-y-4 mb-12 text-left bg-black/40 p-8 rounded-3xl border border-white/5 inline-block">
+             <p className="text-xl text-gray-300 font-medium mb-6">Sometimes the real miracle is when:</p>
+             {[
+               "fear becomes faith",
+               "stress becomes peace",
+               "hopelessness becomes confidence",
+               "and a person finally feels strong enough to move forward again."
+             ].map((text, idx) => (
+               <div key={idx} className="flex items-center gap-3 text-yellow-500/90 text-lg md:text-xl font-serif italic">
+                 <Sparkles className="w-5 h-5 shrink-0" />
+                 <span>{text}</span>
+               </div>
+             ))}
+           </div>
+           
+           <p className="text-2xl md:text-3xl text-white font-bold font-serif tracking-wide drop-shadow-lg">
+             “Your new beginning may start with <span className="text-gold-gradient">one peaceful step</span>.”
+           </p>
         </motion.div>
+
       </div>
     </section>
   );

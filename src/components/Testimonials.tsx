@@ -4,19 +4,16 @@ import { useEffect, useRef, useState } from 'react';
 
 export default function Testimonials() {
   const allTestimonials = [
-    { name: "Rajiv S.", location: "Delhi", text: "This guide helped me stay mentally calm during a very tough financial phase. The daily routine brought structure to my life.", avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=150" },
-    { name: "Priya M.", location: "Pune", text: "I became more positive and disciplined. Taking 10 minutes every morning for this spiritual routine gave me deep peace.", avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=150" },
-    { name: "Amit D.", location: "Mumbai", text: "Beautiful and respectful guidance. I used to wake up stressed, but now I start my day with faith and patience. Very thankful.", avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150" },
-    { name: "Sneha K.", location: "Bangalore", text: "No exaggerated claims, just pure devotional practice. It genuinely helped me reduce negative thinking and focus on my work.", avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150" },
-    { name: "Vikram R.", location: "Hyderabad", text: "The spiritual routine gave me peace when I needed it most. It reminds you to stay grounded and keep doing your daily karma.", avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150" },
-    { name: "Anjali T.", location: "Chennai", text: "A very calm and uplifting experience. It helped me find emotional balance while dealing with family pressures.", avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=150" },
-    { name: "Suresh P.", location: "Kolkata", text: "A life changing spiritual routine. My mind feels incredibly light now.", avatar: "https://i.pravatar.cc/150?u=7" },
-    { name: "Deepika J.", location: "Surat", text: "Very pure and nicely guided. It brings a lot of positive energy continuously.", avatar: "https://i.pravatar.cc/150?u=8" },
-    { name: "Neha A.", location: "Ahmedabad", text: "We recite this together as a family now. The financial worries are not overpowering us anymore.", avatar: "https://i.pravatar.cc/150?u=9" }
+    { name: "Rajesh Kumar", location: "Delhi", text: "This guide helped me stay calm during stressful times. The daily routine brought structure to my life.", avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=150" },
+    { name: "Priya Sahu", location: "Bhubaneswar", text: "I feel more positive and disciplined now. Taking a few minutes every morning gave me deep peace.", avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=150" },
+    { name: "Amit Sharma", location: "Mumbai", text: "Simple and peaceful spiritual routine. I used to wake up stressed, but now I start my day with faith.", avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150" },
+    { name: "Neha Patel", location: "Ahmedabad", text: "Very respectful and easy to follow. It genuinely helped me reduce negative thinking.", avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150" },
+    { name: "Vivek Verma", location: "Lucknow", text: "Gave me emotional peace and motivation. It reminds you to stay grounded and keep doing your daily karma.", avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150" },
+    { name: "Suman Mishra", location: "Odisha", text: "I started feeling mentally lighter. It helped me find emotional balance while dealing with family pressures.", avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=150" }
   ];
 
   // Duplicate for smooth infinite scrolling
-  const testimonials = [...allTestimonials, ...allTestimonials];
+  const testimonials = [...allTestimonials, ...allTestimonials, ...allTestimonials];
 
   return (
     <section className="py-24 px-4 bg-[#1A0307] relative overflow-hidden">
@@ -24,10 +21,29 @@ export default function Testimonials() {
       <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-[#1A0307] to-transparent z-10 hidden md:block"></div>
 
       <div className="max-w-7xl mx-auto mb-16 text-center relative z-20">
-        <h2 className="font-serif text-3xl md:text-5xl font-bold text-white mb-4">
-          Words of <span className="text-gold-gradient">Devotees</span>
+        <h2 className="font-serif text-3xl md:text-5xl font-bold text-white mb-6">
+          Real User <span className="text-gold-gradient">Experiences</span>
         </h2>
-        <p className="text-gray-400">Experiences from those who embraced the practice.</p>
+        
+        <div className="flex flex-wrap justify-center gap-4 md:gap-8 mb-8">
+           <div className="flex flex-col items-center">
+              <span className="text-yellow-500 text-2xl mb-1">⭐</span>
+              <span className="text-white font-bold text-lg">4.9/5 Average</span>
+              <span className="text-gray-400 text-xs uppercase tracking-wider">Experience</span>
+           </div>
+           <div className="w-px h-12 bg-yellow-900/40 hidden md:block"></div>
+           <div className="flex flex-col items-center">
+              <span className="text-yellow-500 text-2xl mb-1">🪔</span>
+              <span className="text-white font-bold text-lg">Thousands</span>
+              <span className="text-gray-400 text-xs uppercase tracking-wider">Devotional Downloads</span>
+           </div>
+           <div className="w-px h-12 bg-yellow-900/40 hidden md:block"></div>
+           <div className="flex flex-col items-center">
+              <span className="text-yellow-500 text-2xl mb-1">🙏</span>
+              <span className="text-white font-bold text-lg">Trusted Across India</span>
+              <span className="text-gray-400 text-xs uppercase tracking-wider">By Devotees</span>
+           </div>
+        </div>
       </div>
 
       <div className="flex flex-col gap-6 w-full -rotate-2">
@@ -35,14 +51,14 @@ export default function Testimonials() {
         <div className="relative flex overflow-x-hidden group">
           <motion.div
             className="flex gap-6 whitespace-nowrap min-w-max group-hover:[animation-play-state:paused]"
-            animate={{ x: [0, -1500] }}
+            animate={{ x: [0, -2000] }}
             transition={{
               repeat: Infinity,
-              duration: 40,
+              duration: 50,
               ease: "linear",
             }}
           >
-            {testimonials.slice(0, 20).map((t, i) => (
+            {testimonials.map((t, i) => (
               <TestimonialCard key={`row1-${i}`} testimonial={t} />
             ))}
           </motion.div>
@@ -52,14 +68,14 @@ export default function Testimonials() {
         <div className="relative flex overflow-x-hidden group mt-4">
           <motion.div
             className="flex gap-6 whitespace-nowrap min-w-max group-hover:[animation-play-state:paused]"
-            animate={{ x: [-1500, 0] }}
+            animate={{ x: [-2000, 0] }}
             transition={{
               repeat: Infinity,
-              duration: 45,
+              duration: 55,
               ease: "linear",
             }}
           >
-            {testimonials.slice(20, 40).map((t, i) => (
+            {testimonials.map((t, i) => (
               <TestimonialCard key={`row2-${i}`} testimonial={t} />
             ))}
           </motion.div>
@@ -69,7 +85,9 @@ export default function Testimonials() {
   );
 }
 
-function TestimonialCard({ testimonial }: { testimonial: any }) {
+import React from 'react';
+
+const TestimonialCard: React.FC<{ testimonial: any }> = ({ testimonial }) => {
   return (
     <div className="bg-black/60 backdrop-blur-md border border-yellow-900/40 p-6 md:p-8 rounded-3xl w-[350px] md:w-[400px] inline-flex flex-col whitespace-normal shrink-0 hover:border-yellow-500/50 hover:bg-[#2A050B]/80 transition-all duration-300 shadow-[0_0_20px_rgba(255,215,0,0.05)] hover:shadow-[0_0_30px_rgba(255,215,0,0.15)] relative overflow-hidden group">
       <div className="absolute -top-10 -right-10 w-32 h-32 bg-yellow-500/5 rounded-full blur-2xl group-hover:bg-yellow-500/10 transition-colors"></div>
@@ -87,12 +105,13 @@ function TestimonialCard({ testimonial }: { testimonial: any }) {
             </motion.div>
           ))}
         </div>
-        <div className="flex items-center gap-1 bg-green-900/30 text-green-400 px-2 flex-shrink-0 py-1 rounded-full border border-green-800/50">
-          <CheckCircle className="w-3 h-3" />
-          <span className="text-[10px] uppercase tracking-wider font-bold">Verified</span>
+        <div className="flex items-center gap-1 bg-green-900/30 text-green-400 px-3 flex-shrink-0 py-1.5 rounded-full border border-green-800/50">
+          <CheckCircle className="w-3.5 h-3.5" />
+          <span className="text-[10px] uppercase tracking-wider font-bold">Verified Devotee</span>
         </div>
       </div>
-
+      
+      <p className="text-yellow-500/80 text-xs font-bold uppercase tracking-wider mb-3">Spiritual Experience Shared</p>
       <p className="text-gray-300 mb-8 flex-grow font-serif italic text-lg md:text-xl leading-relaxed text-shadow-sm">"{testimonial.text}"</p>
       
       <div className="mt-auto border-t border-yellow-900/30 pt-5 flex items-center justify-between z-10">

@@ -20,7 +20,7 @@ export default function Footer() {
           whileTap={{ scale: 0.95 }}
           className="bg-transparent border-2 border-yellow-500 text-yellow-500 font-bold px-10 py-5 rounded-full hover:bg-yellow-500 hover:text-black transition-all mb-4 shadow-[0_0_20px_rgba(255,215,0,0.1)] hover:shadow-[0_0_30px_rgba(255,215,0,0.3)] backdrop-blur-sm"
         >
-          Receive Divine Access for ₹299
+          Start My Spiritual Journey for ₹299
         </motion.button>
       </div>
 

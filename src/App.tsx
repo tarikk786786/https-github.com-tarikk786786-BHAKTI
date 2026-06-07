@@ -6,8 +6,10 @@
 import FloatingPetals from './components/FloatingPetals';
 import SmokeEffect from './components/SmokeEffect';
 import MouseGlow from './components/MouseGlow';
+import GoldenParticles from './components/GoldenParticles';
 import ScrollProgress from './components/ScrollProgress';
 import PrayerBell from './components/PrayerBell';
+import AmbientMusicToggle from './components/AmbientMusicToggle';
 import LivePurchasePopup from './components/LivePurchasePopup';
 import Hero from './components/Hero';
 import Urgency from './components/Urgency';
@@ -17,6 +19,7 @@ import SpiritualQuotes from './components/SpiritualQuotes';
 import SpiritualPromise from './components/SpiritualPromise';
 import SpiritualChallenge from './components/SpiritualChallenge';
 import TrustPromise from './components/TrustPromise';
+import ProductShowcase from './components/ProductShowcase';
 import Donation from './components/Donation';
 import Benefits from './components/Benefits';
 import HowItWorks from './components/HowItWorks';
@@ -38,7 +41,9 @@ export default function App() {
       <MouseGlow />
       <SmokeEffect />
       <FloatingPetals />
+      <GoldenParticles />
       <PrayerBell />
+      <AmbientMusicToggle />
       <LivePurchasePopup />
       <div className="relative z-10 hidden md:block">
         <Urgency />
@@ -48,6 +53,7 @@ export default function App() {
       <Story />
       <SpiritualPromise />
       <TrustPromise />
+      <ProductShowcase />
       <SpiritualChallenge />
       <Donation />
       <Authority />

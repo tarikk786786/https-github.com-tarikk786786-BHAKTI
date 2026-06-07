@@ -11,11 +11,22 @@ export default function LivePurchasePopup() {
 
   useEffect(() => {
     const triggerPopup = () => {
-      const name = NAMES[Math.floor(Math.random() * NAMES.length)];
+      const isNewDevotee = Math.random() > 0.5;
       const location = LOCATIONS[Math.floor(Math.random() * LOCATIONS.length)];
-      const time = Math.floor(Math.random() * 15) + 1;
       
-      setData({ name, location, time: `${time} min ago` });
+      let message = "";
+      let subMessage = "";
+      
+      if (isNewDevotee) {
+        message = `New devotee joined from ${location}`;
+        const time = Math.floor(Math.random() * 15) + 1;
+        subMessage = `Started their spiritual journey ${time} min ago`;
+      } else {
+        message = `Someone from ${location} just accessed the guide`;
+        subMessage = "Instant Digital Access Sent";
+      }
+      
+      setData({ name: message, location: "", time: subMessage });
       setIsVisible(true);
       
       setTimeout(() => {
@@ -51,10 +62,10 @@ export default function LivePurchasePopup() {
           </div>
           <div>
             <p className="text-gray-200 text-sm font-medium">
-              <span className="font-bold text-white">{data.name}</span> in {data.location}
+              <span className="font-bold text-white">{data.name}</span>
             </p>
-            <p className="text-gray-400 text-xs">
-              Started their spiritual journey <span className="text-yellow-500/80">{data.time}</span>
+            <p className="text-gray-400 text-xs mt-1">
+              <span className="text-yellow-500/80">{data.time}</span>
             </p>
           </div>
         </motion.div>

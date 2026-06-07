@@ -28,17 +28,18 @@ export default function Urgency() {
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         
         <div className="flex items-center gap-2 text-yellow-500 font-semibold animate-pulse">
-          <span className="text-xl">🔥</span> LIMITED SPIRITUAL OFFER — TODAY ONLY ₹299
+          <span className="text-xl">🔥</span> LIMITED SPIRITUAL ACCESS AVAILABLE TODAY • ONLY ₹299
         </div>
 
         <div className="flex items-center gap-6 text-sm font-medium">
           <div className="flex items-center gap-2 text-white/80 bg-white/5 px-3 py-1.5 rounded-full">
             <Users className="w-4 h-4 text-yellow-500" />
-            <span>{viewers} Viewing Now</span>
+            <span>{viewers} Devotees Starting Today</span>
           </div>
 
           <div className="flex items-center gap-2 text-white/90 bg-yellow-500/10 px-4 py-1.5 rounded-full border border-yellow-500/20">
             <Timer className="w-4 h-4 text-yellow-500" />
+            <span className="mr-1 hidden sm:inline text-yellow-500/70">Offer Ends In:</span>
             <span className="font-mono text-yellow-400">
               {String(minutes).padStart(2, '0')}:{String(seconds).padStart(2, '0')}
             </span>

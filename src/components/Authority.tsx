@@ -42,38 +42,47 @@ export default function Authority() {
             <h3 className="font-serif text-3xl md:text-5xl font-bold text-white mb-2 tracking-wide">Pandit Raghu Bharma</h3>
             <p className="text-yellow-500 font-medium mb-8 text-lg md:text-xl tracking-wider">Spiritual Guide & Vedic Scholar</p>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="flex items-start gap-4 group">
-                <div className="p-3 bg-yellow-500/10 rounded-xl text-yellow-500 border border-yellow-500/20 group-hover:bg-yellow-500/20 transition-colors shadow-[0_0_15px_rgba(255,215,0,0.1)]"><Award className="w-6 h-6"/></div>
+                <div className="p-3 bg-yellow-500/10 rounded-xl text-yellow-500 border border-yellow-500/20 group-hover:bg-yellow-500/20 transition-colors shadow-[0_0_15px_rgba(255,215,0,0.1)] shrink-0"><Award className="w-6 h-6"/></div>
                 <div>
-                  <h4 className="font-bold text-gray-200 text-lg">12+ Years Experience</h4>
-                  <p className="text-sm text-gray-400 leading-relaxed">Dedicated spiritual practice and deep Vedic knowledge.</p>
+                  <h4 className="font-bold text-gray-200 text-lg mb-1">40+ Years Experience</h4>
+                  <p className="text-sm text-gray-400 leading-relaxed">Dedicated more than four decades to deep spiritual practice, Vedic learning, devotional guidance, and sacred ritual traditions rooted in Indian spirituality.</p>
                 </div>
               </div>
               <div className="flex items-start gap-4 group">
-                <div className="p-3 bg-yellow-500/10 rounded-xl text-yellow-500 border border-yellow-500/20 group-hover:bg-yellow-500/20 transition-colors shadow-[0_0_15px_rgba(255,215,0,0.1)]"><BookOpen className="w-6 h-6"/></div>
+                <div className="p-3 bg-yellow-500/10 rounded-xl text-yellow-500 border border-yellow-500/20 group-hover:bg-yellow-500/20 transition-colors shadow-[0_0_15px_rgba(255,215,0,0.1)] shrink-0"><BookOpen className="w-6 h-6"/></div>
                 <div>
-                  <h4 className="font-bold text-gray-200 text-lg">Banaras Tradition</h4>
-                  <p className="text-sm text-gray-400 leading-relaxed">Authentic lineage & wisdom passed down through generations.</p>
+                  <h4 className="font-bold text-gray-200 text-lg mb-1">Sacred Banaras Tradition</h4>
+                  <p className="text-sm text-gray-400 leading-relaxed">Born into a spiritually connected environment inspired by the ancient wisdom and devotional culture of Banaras, carrying forward traditional values with sincerity and discipline.</p>
                 </div>
               </div>
               <div className="flex items-start gap-4 group">
-                <div className="p-3 bg-yellow-500/10 rounded-xl text-yellow-500 border border-yellow-500/20 group-hover:bg-yellow-500/20 transition-colors shadow-[0_0_15px_rgba(255,215,0,0.1)]"><Star className="w-6 h-6"/></div>
+                <div className="p-3 bg-yellow-500/10 rounded-xl text-yellow-500 border border-yellow-500/20 group-hover:bg-yellow-500/20 transition-colors shadow-[0_0_15px_rgba(255,215,0,0.1)] shrink-0"><Star className="w-6 h-6"/></div>
                 <div>
-                  <h4 className="font-bold text-gray-200 text-lg">Ganesh Sadhana</h4>
-                  <p className="text-sm text-gray-400 leading-relaxed">Ancient Ganesh Sadhana knowledge and precise practices.</p>
+                  <h4 className="font-bold text-gray-200 text-lg mb-1">Ancient Ganesh Sadhana</h4>
+                  <p className="text-sm text-gray-400 leading-relaxed">Known for practicing and sharing traditional Ganesh Sadhana methods focused on positivity, spiritual discipline, inner peace, and devotional guidance.</p>
                 </div>
               </div>
               <div className="flex items-start gap-4 group">
-                <div className="p-3 bg-yellow-500/10 rounded-xl text-yellow-500 border border-yellow-500/20 group-hover:bg-yellow-500/20 transition-colors shadow-[0_0_15px_rgba(255,215,0,0.1)]"><Users className="w-6 h-6"/></div>
+                <div className="p-3 bg-yellow-500/10 rounded-xl text-yellow-500 border border-yellow-500/20 group-hover:bg-yellow-500/20 transition-colors shadow-[0_0_15px_rgba(255,215,0,0.1)] shrink-0"><Users className="w-6 h-6"/></div>
                 <div>
-                  <h4 className="font-bold text-gray-200 text-lg">Guided Devotees</h4>
-                  <p className="text-sm text-gray-400 leading-relaxed">Guided numerous devotees with respectful spiritual rituals.</p>
+                  <h4 className="font-bold text-gray-200 text-lg mb-1">Guided Thousands</h4>
+                  <p className="text-sm text-gray-400 leading-relaxed">For many years, devotees from different parts of India have sought spiritual guidance, peaceful rituals, and motivational support through his devotional teachings.</p>
                 </div>
               </div>
             </div>
 
-            <div className="mt-10 pt-8 border-t border-white/10">
+            <div className="mt-8 bg-black/30 border border-yellow-900/30 p-6 rounded-2xl flex flex-col gap-4">
+              <p className="text-gray-300 text-sm font-medium leading-relaxed italic border-l-2 border-yellow-600/40 pl-4">
+                His mission is to spread hope, faith, positivity, discipline, and spiritual peace for people going through emotionally difficult and stressful phases of life.
+              </p>
+              <p className="text-gray-300 text-sm font-medium leading-relaxed italic border-l-2 border-yellow-600/40 pl-4">
+                Believes true spirituality is built on sincerity, humility, devotion, discipline, and genuine service toward humanity.
+              </p>
+            </div>
+
+            <div className="mt-8 pt-6 border-t border-white/10">
               <p className="font-serif italic text-2xl text-gray-400 signature-font">Raghu Bharma</p>
             </div>
           </motion.div>
